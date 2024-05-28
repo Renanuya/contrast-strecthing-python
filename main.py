@@ -1,16 +1,25 @@
-# This is a sample Python script.
+import numpy as np
+import pandas as pd
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+data = pd.read_excel('data/example_data.xlsx')
 
+dataAsNumpy = data.to_numpy()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+L = 256
+min_pixel_value = np.min(dataAsNumpy)
+max_pixel_value = np.max(dataAsNumpy)
 
+contrast_stretched_data = np.zeros_like(dataAsNumpy, dtype=np.float32)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+for i in range(dataAsNumpy.shape[0]):
+    for j in range(dataAsNumpy.shape[1]):
+        contrast_stretched_data[i, j] = ((dataAsNumpy[i, j] - min_pixel_value) / (max_pixel_value - min_pixel_value)) * (L - 1)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+new_contrast_stretched_data = contrast_stretched_data.astype(np.uint8)
+new_contrast_stretched_data_as_data_frame = pd.DataFrame(new_contrast_stretched_data)
+
+output_file_path = 'data/contrast_stretched_example_data.xlsx'
+new_contrast_stretched_data_as_data_frame.to_excel(output_file_path, index=False, header=False)
+print(new_contrast_stretched_data)
+print("------------------------------------------------------------------")
+print("Contrast stretched data has been saved to: ", output_file_path)
