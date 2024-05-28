@@ -33,7 +33,7 @@ The script reads image data from an Excel file, performs contrast stretching to 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/contrast-stretching-script.git
+   git clone https://github.com/Renanuya/contrast-strecthing-python/.git
    cd contrast-stretching-script
    ```
 
