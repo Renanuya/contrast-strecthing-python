@@ -3,13 +3,13 @@
 This repository contains a Python script for performing contrast stretching on image data stored in an Excel file.
 
 ## 📋 Table of Contents
-- [Description](#description)
-- [Features](#features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Example](#example)
-- [Acknowledgements](#acknowledgements)
+- [📖 Description](#-description)
+- [✨ Features](#-features)
+- [🛠️ Requirements](#-requirements)
+- [💾 Installation](#-installation)
+- [🚀 Usage](#-usage)
+- [📝 Example](#-example)
+- [🙏 Acknowledgements](#-acknowledgements)
 
 ## 📖 Description
 
